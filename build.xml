@@ -14,13 +14,13 @@
     <javac srcdir="src" destdir="build/classes" debug="on"/>
   </target>
   
-  <target name="jar" depends="compile" unless="skip.jar">
+  <target name="jar" depends="test" unless="skip.jar">
     <jar file="build/hello.jar">
       <fileset dir="build/classes"/>
     </jar>
   </target>
   
-  <target name="test-compile">
+  <target name="test-compile" depends="compile">
     <mkdir dir="build/test-classes" />
     <javac srcdir="test" destdir="build/test-classes">
       <classpath>
@@ -30,7 +30,7 @@
     </javac>
   </target>
 
-  <target name="test" depends="compile,test-compile">
+  <target name="test" depends="test-compile">
     <mkdir dir="build/test-reports"/>
     <jacoco:coverage enabled="${jacoco}" destfile="build/jacoco.exec">
       <junit printsummary="yes" haltonfailure="yes" fork="true" forkmode="once">
