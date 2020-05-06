@@ -3,7 +3,7 @@
 	
 	<!-- add servlets, filters and context listeners with annotations -->
 	
-	<d<servlet>
+	<servlet>
 		<servlet-name>Hello</servlet-name>
 		<servlet-class>Hello.concatenate</servlet-class>
 	</servlet>
