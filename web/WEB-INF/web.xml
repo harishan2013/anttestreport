@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.1">
+	
+	<!-- add servlets, filters and context listeners with annotations -->
+	
+	<d<servlet>
+		<servlet-name>Hello</servlet-name>
+		<servlet-class>Hello.concatenate</servlet-class>
+	</servlet>
+
+</web-app>
