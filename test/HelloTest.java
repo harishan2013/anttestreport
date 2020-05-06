@@ -1,9 +1,15 @@
-import junit.framework.TestCase;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-public class HelloTest extends TestCase {
-    public void test1() {}
-    public void test2() {}
-    public void test3() {
-        new Hello().foo();
+public class HelloTest {
+
+    @Test
+    public void testConcatenate() {
+        Hello hello = new Hello();
+
+        String result = hello.concatenate("one", "two");
+
+        assertEquals("onetwo", result);
+
     }
 }
