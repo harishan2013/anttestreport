@@ -15,9 +15,9 @@
   </target>
   
   <target name="war" depends="test">
-    <jar file="build/hello.war">
+    <war file="build/hello.war">
       <fileset dir="build/classes"/>
-    </jar>
+    </war>
   </target>
   
   <target name="test-compile" depends="compile">
@@ -50,7 +50,7 @@
     </jacoco:coverage>
   </target>
 
-  <target name="findbugs" depends="jar">
+  <target name="findbugs" depends="war">
     <taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask">
       <classpath>
         <fileset dir="lib/findbugs/lib" includes="*.jar"/>
