@@ -7,7 +7,7 @@ public class HelloTest {
     public void testConcatenate() {
         Hello hello = new Hello();
 
-        String result = hello.concatenate("one", "two");
+        String result = hello.concatenate("one", "three");
 
         assertEquals("onetwo", result);
 
