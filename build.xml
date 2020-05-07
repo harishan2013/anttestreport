@@ -64,11 +64,12 @@
     </findbugs>
   </target>
 
-  <target name="jacoco">
+  <target name="jacoco" depends="jacoco-report">
     <property name="jacoco" value="true"/>
   </target>
 
   <target name="jacoco-report" depends="test">
+  <mkdir dir="build/jacoco-report"/>
     <jacoco:report>
       <executiondata>
         <file file="build/jacoco.exec"/>
