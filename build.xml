@@ -52,7 +52,7 @@
     </jacoco:coverage>
   </target>
 
-  <target name="findbugs" depends="jar">
+  <target name="findbugs">
     <taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask">
       <classpath>
         <fileset dir="lib/findbugs/lib" includes="*.jar"/>
@@ -63,9 +63,12 @@
       <class location="build/hello.jar"/>
     </findbugs>
   </target>
-
+  
+  <target name="jacoco">
+    <property name="jacoco" value="true"/>
+  </target>
  
-  <target name="jacoco-report" depends="test">
+  <target name="jacoco-report" depends="jar">
   <mkdir dir="build/jacoco-report"/>
     <jacoco:report>
       <executiondata>
@@ -82,7 +85,7 @@
       <html destdir="build/jacoco-report"/>
     </jacoco:report>
   </target>
-  <target name="war" depends="jar">
+  <target name="war" depends="jacoco-report">
 		<war destfile="build/hello.war"
 			webxml="${webxml}">
 			<fileset dir="${web}" />
