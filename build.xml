@@ -50,6 +50,7 @@
           </fileset>
         </batchtest>
       </junit>
+	  </java>
     </jacoco:coverage>
   </target>
 
