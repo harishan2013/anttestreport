@@ -34,8 +34,9 @@
 
   <target name="test" depends="test-compile">
     <mkdir dir="build/test-reports"/>
-    <jacoco:coverage enabled="${jacoco}" destfile="build/jacoco.exec">
-      <junit printsummary="yes" haltonfailure="yes" fork="true" forkmode="once">
+    <jacoco:coverage destfile="build/jacoco.exec">
+	<java classname="org.jacoco.examples.parser.Main" fork="true">
+      <junit printsummary="yes" haltonfailure="yes" forkmode="once">
         <classpath>
           <fileset dir="lib" includes="*.jar" />
           <pathelement path="build/classes" />
@@ -64,10 +65,6 @@
     </findbugs>
   </target>
   
-  <target name="jacoco">
-    <property name="jacoco" value="true"/>
-  </target>
- 
   <target name="jacoco-report" depends="jar">
   <mkdir dir="build/jacoco-report"/>
     <jacoco:report>
