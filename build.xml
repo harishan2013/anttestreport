@@ -35,8 +35,7 @@
   <target name="test" depends="test-compile">
     <mkdir dir="build/test-reports"/>
     <jacoco:coverage destfile="build/jacoco.exec">
-	<java classname="org.jacoco.examples.parser.Main" fork="true">
-      <junit printsummary="yes" haltonfailure="yes" forkmode="once">
+	<java classname="org.jacoco.examples.parser.Main" fork="true">      
         <classpath>
           <fileset dir="lib" includes="*.jar" />
           <pathelement path="build/classes" />
@@ -48,8 +47,7 @@
           <fileset dir="test">
             <include name="**/*Test*.java"/>
           </fileset>
-        </batchtest>
-      </junit>
+        </batchtest>      
 	  </java>
     </jacoco:coverage>
   </target>
